@@ -2,7 +2,8 @@ const text = document.querySelector('.input');
 const addBtn = document.querySelector('.add-button');
 const items = document.querySelector('.items');
 const deleteBtn = document.querySelectorAll('.item-delete');
-const allDelteBtn = document.querySelector('.delete-all-btn');
+const allDeleteBtn = document.querySelector('.delete-all-btn');
+const checkDeleteBtn = document.querySelector('.delete-chk-btn');
 
 addBtn.addEventListener('click', e=>{
     onAdd();
@@ -25,12 +26,21 @@ text.addEventListener('keypress', e => {
     }
 });
 
-allDelteBtn.addEventListener('click', e=> {
+allDeleteBtn.addEventListener('click', e=> {
     const length = items.childElementCount;
     for(let i=0; i<length; i++){
         items.children[0].remove()
     };
 });
+
+checkDeleteBtn.addEventListener('click', e=> {
+    const deleted = document.querySelectorAll('.checked');
+    for (const del of deleted) {
+        del.parentElement.parentElement.remove();
+    }
+}) 
+
+
 
 
 function onAdd() {
