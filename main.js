@@ -9,11 +9,14 @@ addBtn.addEventListener('click', e=>{
 });
 
 items.addEventListener('click', e => {
+    const chk = e.target.dataset.chk;
     const target = e.target.dataset.id;
     if(target){
-        const deleted = document.querySelector(`.item-row[data-id='${target}']`)
+        const deleted = document.querySelector(`.item-row[data-id='${target}']`);
         deleted.remove();
-    };
+    }else if(chk){
+        e.target.classList.toggle('checked');
+    }
 });
 
 text.addEventListener('keypress', e => {
@@ -49,7 +52,7 @@ function createItem (toDo) {
     itemRow.setAttribute('data-id', id)
     itemRow.innerHTML = `
     <div class="item">
-        <span class="item-name">${toDo}</span>
+        <span class="item-name" data-chk=${id}>${toDo}</span>
         <button class="item-delete">
             <i class="fas fa-trash-alt" data-id=${id}></i>
         </button>

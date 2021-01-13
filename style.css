@@ -71,6 +71,10 @@ h1{
     color: #2ecc71;
 }
 
+.checked{
+    text-decoration: line-through;
+}
+
 .item{
     display: flex;
     justify-content: space-between;
@@ -79,6 +83,16 @@ h1{
     border-bottom: 2px solid white;
     width: 90%;
     margin: auto;
+}
+
+.item-name{
+    cursor: pointer;
+    transition: .3s;
+}
+
+.item-name:hover{
+    color: #3498db;
+    transform: scale(1.1);
 }
 
 .item-delete i{
