@@ -1,7 +1,8 @@
 const text = document.querySelector('.input');
 const addBtn = document.querySelector('.add-button');
 const items = document.querySelector('.items');
-const deleteBtn = document.querySelectorAll('.item-delete')
+const deleteBtn = document.querySelectorAll('.item-delete');
+const allDelteBtn = document.querySelector('.delete-all-btn');
 
 addBtn.addEventListener('click', e=>{
     onAdd();
@@ -19,6 +20,13 @@ text.addEventListener('keypress', e => {
     if(e.key === 'Enter'){
         onAdd();
     }
+});
+
+allDelteBtn.addEventListener('click', e=> {
+    const length = items.childElementCount;
+    for(let i=0; i<length; i++){
+        items.children[0].remove()
+    };
 });
 
 
