@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css"/>
+    <link rel="stylesheet" href="style.css">
+    <title>to-do-list</title>
+</head>
+<body>
+    <section class="to-do-list">
+        <header>
+            <h1 class="title">To Do list</h1>
+            <div class="input-box">
+                <input type="text" class="input">
+                <button class="add-button">추가</button>
+            </div>
+        </header>
+        <ul class="items">
+            <li class="item-row">
+                <div class="item">
+                    <span class="item-name">청소하기</span>
+                    <button class="item-delete">
+                        <i class="fas fa-trash-alt"></i>
+                    </button>
+                </div>
+            </li>
+            <li class="item-row">
+                <div class="item">
+                    <span class="item-name">쇼핑하기</span>
+                    <button class="item-delete">
+                        <i class="fas fa-trash-alt"></i>
+                    </button>
+                </div>
+            </li>
+        </ul>
+        <footer class="btn-area">
+            <button>한일 지우기</button>
+            <button>마지막 지우기</button>
+            <button>모두 지우기</button>
+        </footer>
+    </section>
+</body>
+</html>
