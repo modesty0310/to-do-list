@@ -12,8 +12,14 @@ items.addEventListener('click', e => {
     if(target){
         const deleted = document.querySelector(`.item-row[data-id='${target}']`)
         deleted.remove();
+    };
+});
+
+text.addEventListener('keypress', e => {
+    if(e.key === 'Enter'){
+        onAdd();
     }
-})
+});
 
 
 function onAdd() {
