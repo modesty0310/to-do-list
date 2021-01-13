@@ -5,6 +5,7 @@ const deleteBtn = document.querySelectorAll('.item-delete');
 const allDeleteBtn = document.querySelector('.delete-all-btn');
 const checkDeleteBtn = document.querySelector('.delete-chk-btn');
 
+
 addBtn.addEventListener('click', e=>{
     onAdd();
 });
@@ -12,11 +13,13 @@ addBtn.addEventListener('click', e=>{
 items.addEventListener('click', e => {
     const chk = e.target.dataset.chk;
     const target = e.target.dataset.id;
+    const checkBox = e.target.childNodes[0];
     if(target){
         const deleted = document.querySelector(`.item-row[data-id='${target}']`);
         deleted.remove();
     }else if(chk){
         e.target.classList.toggle('checked');
+        checkBox.classList.toggle('hide');
     }
 });
 
@@ -40,9 +43,6 @@ checkDeleteBtn.addEventListener('click', e=> {
     }
 }) 
 
-
-
-
 function onAdd() {
     if(!text.value){
         return;
@@ -62,7 +62,7 @@ function createItem (toDo) {
     itemRow.setAttribute('data-id', id)
     itemRow.innerHTML = `
     <div class="item">
-        <span class="item-name" data-chk=${id}>${toDo}</span>
+        <span class="item-name" data-chk=${id}><i class="fas fa-check hide"></i>${toDo}</span>
         <button class="item-delete">
             <i class="fas fa-trash-alt" data-id=${id}></i>
         </button>
